@@ -17,9 +17,9 @@ class Door {
 
 class DoorTimerAdapter : public TimerClient {
  private:
-  TimedDoor& door;
+  &TimedDoor door;
  public:
-  explicit DoorTimerAdapter(TimedDoor&);
+  explicit DoorTimerAdapter(TimedDoor& _door);
   void Timeout();
 };
 

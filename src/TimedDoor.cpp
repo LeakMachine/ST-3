@@ -7,7 +7,7 @@
 DoorTimerAdapter::DoorTimerAdapter(TimedDoor& _door) : door(_door) {}
 
 void DoorTimerAdapter::Timeout() {
-  door.throwState();
+  door->throwState();
 }
 
 TimedDoor::TimedDoor(int _timeout) {
