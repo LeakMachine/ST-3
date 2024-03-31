@@ -4,3 +4,8 @@
 #include <gmock/gmock.h>
 #include <cstdint>
 #include "TimedDoor.h"
+
+TEST(TimedDoorTest, testDoorTimerWorking) {
+  TimedDoor tDoor(5);
+  ASSERT_ANY_THROW(tDoor.unlock());
+}
