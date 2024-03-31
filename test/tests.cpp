@@ -6,21 +6,20 @@
 #include "TimedDoor.h"
 
 class TimerClientMock : public TimerClient {
-public:
+ public:
     MOCK_METHOD(void, Timeout, (), (override));
 };
 
 class TimedDoorMock : public Door {
-public:
+ public:
     MOCK_METHOD(bool, isDoorOpened, (), (override));
     MOCK_METHOD(void, unlock, (), (override));
     MOCK_METHOD(void, lock, (), (override));
 };
 
 class DoorTimerAdapterTest : public ::testing::Test {
-protected:
+ protected:
     void SetUp() override {
-
         timerClientMock = std::make_unique<StrictMock<TimerClientMock>>();
         timedDoorMock = std::make_unique<StrictMock<TimedDoorMock>>();
 

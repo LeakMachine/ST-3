@@ -1,7 +1,7 @@
 // Copyright 2024 Vinokurov Ivan
 
-#ifndef INCLUDE_TIMEDDOOR_H_
-#define INCLUDE_TIMEDDOOR_H_
+#ifndef SRC_TIMEDDOOR_H_
+#define SRC_TIMEDDOOR_H_
 
 class TimerClient {
  public:
@@ -44,4 +44,4 @@ class Timer {
   void tregister(int, TimerClient*);
 };
 
-#endif  // INCLUDE_TIMEDDOOR_H_
+#endif  // SRC_TIMEDDOOR_H_
