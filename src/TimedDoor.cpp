@@ -3,15 +3,11 @@
 #include "TimedDoor.h"
 #include <stdexcept>
 #include <iostream>
-#include <chrono>
-#include <thread>
 
 DoorTimerAdapter::DoorTimerAdapter(TimedDoor& _door) : door(_door) {}
 
 void DoorTimerAdapter::Timeout() {
-	if (door.isDoorOpened() == true) {
-		door.throwState();
-	}
+	door.throwState();
 }
 
 TimedDoor::TimedDoor(int _timeout) {
@@ -38,11 +34,13 @@ int TimedDoor::getTimeOut() {
 }
 
 void TimedDoor::throwState() {
-	throw std::runtime_error("Door timeout reached without door being closed!");
+	if (isOpened == true) {
+		throw std::runtime_error("Door timeout");
+	}
 }
 
 void Timer::sleep(int _time) {
-	std::this_thread::sleep_for(std::chrono::seconds(_time));
+	for (int i = _time; i > 0; i--);
 }
 
 void Timer::tregister(int _time, TimerClient* _client) {

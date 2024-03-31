@@ -24,7 +24,7 @@ class DoorTimerAdapter : public TimerClient {
  private:
   TimedDoor& door;
  public:
-  explicit DoorTimerAdapter(TimedDoor& _door);
+  explicit DoorTimerAdapter(const TimedDoor& _door);
   void Timeout();
 };
 
