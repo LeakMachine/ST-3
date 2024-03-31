@@ -40,7 +40,7 @@ void TimedDoor::throwState() {
 }
 
 void Timer::sleep(int _time) {
-  for (int i = _time; i > 0; i--);
+  for (int i = _time; i > 0; i--) {}
 }
 
 void Timer::tregister(int _time, TimerClient* _client) {
