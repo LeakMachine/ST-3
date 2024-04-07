@@ -7,7 +7,7 @@
 DoorTimerAdapter::DoorTimerAdapter(TimedDoor& door) : door(door) {}
 
 void DoorTimerAdapter::Timeout() {
-  door->throwState();
+  door.throwState();
 }
 
 TimedDoor::TimedDoor(int timeout) {
@@ -29,7 +29,7 @@ void TimedDoor::lock() {
   isOpened = false;
 }
 
-int TimedDoor::getTimeOut() {
+int TimedDoor::getTimeOut() const {
   return iTimeout;
 }
 
