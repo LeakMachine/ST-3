@@ -63,7 +63,7 @@ TEST_F(TimedDoorTest, testeOutDoorOpened) {
 }
 
 TEST_F(TimedDoorTest, testTimeOutDoorClosed) {
-  EXPECT_NO_THROW(door->throwState(), std::runtime_error);
+  EXPECT_NO_THROW(door->throwState());
   EXPECT_FALSE(door->isDoorOpened());
 }
 
