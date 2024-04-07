@@ -1,6 +1,6 @@
 // Copyright 2024 Vinokurov Ivan
 
-#include "../include/TimedDoor.h"
+#include "TimedDoor.h"
 #include <stdexcept>
 #include <iostream>
 

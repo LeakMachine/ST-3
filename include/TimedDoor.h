@@ -24,7 +24,7 @@ class DoorTimerAdapter : public TimerClient {
  private:
   TimedDoor& door;
  public:
-  explicit DoorTimerAdapter(const TimedDoor& _door);
+  explicit DoorTimerAdapter(TimedDoor&);
   void Timeout();
 };
 
@@ -34,19 +34,19 @@ class TimedDoor : public Door {
   int iTimeout;
   bool isOpened;
  public:
-  explicit TimedDoor(int _timeout);
+  explicit TimedDoor(int);
   bool isDoorOpened();
   void unlock();
   void lock();
-  int getTimeOut();
+  int  getTimeOut() const;
   void throwState();
 };
 
 class Timer {
   TimerClient *client;
-  void sleep(int _time);
+  void sleep(int);
  public:
-  void tregister(int _time, TimerClient* _timer);
+  void tregister(int, TimerClient*);
 };
 
 #endif  // INCLUDE_TIMEDDOOR_H_
