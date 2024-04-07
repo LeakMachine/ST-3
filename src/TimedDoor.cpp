@@ -4,14 +4,14 @@
 #include <stdexcept>
 #include <iostream>
 
-DoorTimerAdapter::DoorTimerAdapter(TimedDoor& _door) : door(_door) {}
+DoorTimerAdapter::DoorTimerAdapter(TimedDoor& door) : door(door) {}
 
 void DoorTimerAdapter::Timeout() {
   door->throwState();
 }
 
-TimedDoor::TimedDoor(int _timeout) {
-  iTimeout = _timeout;
+TimedDoor::TimedDoor(int timeout) {
+  iTimeout = timeout;
   isOpened = false;
 }
 
@@ -39,11 +39,11 @@ void TimedDoor::throwState() {
   }
 }
 
-void Timer::sleep(int _time) {
-  for (int i = _time; i > 0; i--) {}
+void Timer::sleep(int time) {
+  for (int i = time; i > 0; i--) {}
 }
 
-void Timer::tregister(int _time, TimerClient* _client) {
-  sleep(_time);
-  _client->Timeout();
+void Timer::tregister(int time, TimerClient* client) {
+  sleep(time);
+  client->Timeout();
 }
