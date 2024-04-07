@@ -30,7 +30,7 @@ void TimedDoor::lock() {
 }
 
 int TimedDoor::getTimeOut() const {
-  if (!isOpened) {
+  if (isOpened) {
     throw std::runtime_error("Door Timeout");
   }
   return 1;

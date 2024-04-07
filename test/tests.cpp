@@ -54,7 +54,7 @@ TEST_F(TimedDoorTest, testTimeOutDoor) {
 TEST_F(TimedDoorTest, TimeOutDoorOpenedUnlocked) {
   door->unlock();
   door->unlock();
-  EXPECT_NO_THROW(door->getTimeOut());
+  EXPECT_THROW(door->getTimeOut(), std::runtime_error);
   EXPECT_TRUE(door->isDoorOpened());
 }
 
