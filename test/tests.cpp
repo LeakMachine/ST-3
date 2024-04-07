@@ -58,7 +58,7 @@ TEST_F(TimedDoorTest, testTimeOutDoor) {
 
 TEST_F(TimedDoorTest, testeOutDoorOpened) {
   door->unlock();
-  EXPECT_THROW(door->throwState());
+  EXPECT_THROW(door->throwState(), std::runtime_error);
   EXPECT_TRUE(door->isDoorOpened());
 }
 
@@ -69,6 +69,6 @@ TEST_F(TimedDoorTest, testTimeOutDoorClosed) {
 
 TEST_F(TimedDoorTest, testTimeOutDoorOpened) {
   door->unlock();
-  EXPECT_THROW(door->throwState());
+  EXPECT_THROW(door->throwState(), std::runtime_error);
   EXPECT_TRUE(door->isDoorOpened());
 }
